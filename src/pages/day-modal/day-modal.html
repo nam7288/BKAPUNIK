@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle class="menu-button">
+      <ion-icon name="menu"></ion-icon>
+    </button>   	
+    <ion-title> <img class="logo-header" alt="logo" height="40"   src="../assets/imgs/logo-header.png" > </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addEvent()" class="add-button">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>   
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content class='content'>	
+	<div class="main-content" (swipe)="swipe($event)">
+		<div class="bg-image">
+			<img *ngFor="let month of monthNames; let i = index; trackBy: customTrackBy" class='background {{getActive(month)}}' [src]="background_img[i]">
+		</div>
+		
+		<ion-icon class='left-arrow' name="ios-arrow-back" (click)="next()"></ion-icon>
+		<div class='day'> 
+			<div >
+				<img class='dayImage' src={{dayImage}}>
+				<!-- <img class='flowerImage month-{{month}}' src={{flowerImage}}> -->
+			</div>
+			<br><div class="yellowLine"></div>
+			<br><div class="dayOfWeek {{translate.store.currentLang}}">{{dayOfWeek | translate}}</div>		
+		</div>
+		<!-- <div class='currentDate'>{{currentDate}}</div> -->
+		<div class='currentDate'>{{'thang_day' | translate}} {{monthNames_day[month-1] | translate}} {{'nam_day' | translate}} {{year}}</div>
+		<div class="date">
+				<div class='hour'>
+				<span class='time-title'>{{'hours' | translate}}</span> 
+				<br><span class='timeNumber'>{{time}} </span>
+				<br> {{gioCanChi}}
+			</div>
+			<div class='lunarDay'>
+				<span class='time-title'>{{'DAY' | translate}}</span>  
+				<br> <span class='timeNumber'>{{ngayAm}}</span>
+				<br> {{ngayCanChi}} 
+			</div>
+			<div class='month'>
+				<span class='time-title'>{{'MONTH' | translate}}</span><br>	
+				<span class='timeNumber'>{{thangAm}}</span>
+				<br> {{thangCanChi}}
+			</div>
+		</div>
+		<ion-icon class='right-arrow' name="ios-arrow-forward" (click)="prev()"></ion-icon>
+
+		<div class='eventbackground'>
+			<img src='../assets/imgs/daybackground/footer.png'>
+
+		</div>
+		<div class='event'>
+			
+			<div class="event-sub">{{gioHoangDao}}</div>
+			<span class="event-tittle">{{titleData?titleData:(flowerName | translate)}}</span>
+			<div class="event-content">
+				<ion-list class='event-list'>		
+			    	<ion-item text-wrap class='event-modul' ion-item *ngFor="let p of eventList" (click)="editEvent(p)">
+			        	<span class ='event-time'>{{ (p.time == '00:00' || p.allDay || p.allday)?alldaytext:p.time}}</span><span class='event-text'>{{ p.title}}</span>
+			    	</ion-item>	      
+				</ion-list>
+			</div>	
+		</div>
+	</div>
+	
+</ion-content>

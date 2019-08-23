@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle class="menu-button">
+      <ion-icon name="menu"></ion-icon>
+    </button>   	
+    <ion-title> <img class="logo-header" alt="logo" height="40"   src="../assets/imgs/logo-header.png" > </ion-title>
+    <ion-buttons end *ngIf="!data.url_video">
+      <button ion-button icon-only (click)="onDownloadIos()" class="add-button" *ngIf="plt.is('ios')">
+        <img height="25" src="../assets/imgs/icon/download.png">
+      </button>
+      <button ion-button icon-only (click)="download()" class="add-button" *ngIf="plt.is('android')">
+        <img height="30" src="../assets/imgs/icon/wal-icon.png">
+      </button>     
+    </ion-buttons> 
+    <ion-buttons end *ngIf="data.url_video">
+      <button ion-button icon-only class="add-button" style="visibility: hidden;">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>   
+  </ion-navbar>
+</ion-header>
+
+<ion-content class='content no-scroll'>	
+	<img *ngIf="!data.url_video" [src]="img_url" />
+	<div class="video" *ngIf="data.url_video">
+		<iframe width="100%"  [src]="trustedVideoUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</ion-content>

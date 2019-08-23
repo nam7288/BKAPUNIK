@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle class="menu-button">
+      <ion-icon name="menu"></ion-icon>
+    </button>   
+    <ion-title>
+      <img class="logo-header" alt="logo" height="40"   src="../assets/imgs/logo-header.png" > 
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="add-button" style="visibility: hidden;">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="ion-content">
+  <div class="title-page">
+    {{ "lunar_calendar_converter" | translate}}
+  </div>
+  <ion-list>
+    <ion-row>
+      <ion-item class="box">
+        <div class="date_title">
+          <img src="../assets/imgs/icon/duong.png">
+          <span>{{ "duonglich" | translate}}</span>
+          
+        </div>
+        <div id="solarDate"></div>
+      </ion-item>
+
+<!--       <ion-item class="box">
+        <div class="date_title amlich-title">
+          <img src="../assets/imgs/icon/am.png">
+          <span>{{ "amlich" | translate}}</span>
+        </div>
+        
+      </ion-item> --> 
+
+      <ion-item *ngIf="is_leaf" class="check-box">
+        <ion-label>{{ "thang_nhuan" | translate}}</ion-label>
+        <ion-checkbox color="light" background="#e71f22" [(ngModel)]="eventLeaf" (ionChange)="changeLeftday(ev)"></ion-checkbox>
+      </ion-item>       
+      <ion-item class="box box-amlich">
+        <div class="date_title amlich-title">
+          <img src="../assets/imgs/icon/am.png">
+          <span>{{ "amlich" | translate}}</span>
+        </div>        
+        <div id="lunarDate"></div>
+      </ion-item>     
+      <ion-item class="btn-view">
+        <button ion-button icon-only class="show-more" (click)="showMore()">
+          {{ "xem_chi_tiet_ngay" | translate}}
+        </button>
+      </ion-item>     
+    </ion-row>
+  </ion-list>
+
+
+</ion-content>
+<img class="font-bg-gallery" src="../assets/imgs/footer-gallery.png">

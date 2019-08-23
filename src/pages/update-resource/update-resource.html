@@ -1,0 +1,8 @@
+<ion-content padding>
+	<div class="background-filter" [style.background-image]="getBg()"></div>
+    <div class="progress-outer" *ngIf="progress>0 && progress<=100 && progress==-100">
+        <div class="progress-inner" [style.width]="progress + '%'">
+            {{progress}}%
+        </div>
+    </div>
+</ion-content>

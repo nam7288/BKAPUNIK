@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle class="menu-button">
+      <ion-icon name="menu"></ion-icon>
+    </button>  	
+    
+    <ion-title>
+      <img class="logo-header" alt="logo" height="40"   src="../assets/imgs/logo-header.png" > 
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="add-button" style="visibility: hidden;">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="ion-content">
+  <ion-item class="item-leave-height">
+    <select [(ngModel)]="category" (change)='changeCategory()'>
+      <option *ngFor="let item of categories" [value]="item._id">{{item.title}}</option>
+    </select>
+  </ion-item>
+  <ion-list class="list-gallery">
+    <ion-row>
+      <ion-item col-6 *ngFor="let post of galleries">
+        <div class="item-gallery" (click)="showDetail(post)">
+          <img [src]="ApiRouter + post.image.path" />
+          <div class="play-video" *ngIf="post.url_video">
+            <ion-icon ios="ios-play" md="md-play"></ion-icon>
+          </div>
+          
+        </div>
+      </ion-item>
+    </ion-row>
+  </ion-list>
+ <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="moredata">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+ </ion-infinite-scroll>  
+
+
+</ion-content>
+  <ul class="pagination" hidden>
+    <li *ngFor="let pitem of pages">
+      <span *ngIf="pitem != page;else active">
+        <a *ngIf="pitem != -1" class="page-item" href="#" (click)="goToPage(pitem)">{{pitem}}</a>
+        <a *ngIf="pitem == -1" class="disabled">...</a>
+      </span> 
+      <ng-template #active class="active">
+          <span class="active">
+            <a *ngIf="pitem != -1" class="page-item" href="#" (click)="goToPage(pitem)">{{pitem}}</a>
+            <a *ngIf="pitem == -1" class="disabled">...</a>   
+          </span>    
+      </ng-template>          
+    </li>
+
+  </ul> 

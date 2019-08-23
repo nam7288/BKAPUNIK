@@ -1,0 +1,180 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle class="menu-button">
+      <ion-icon name="menu"></ion-icon>
+    </button>  	
+    <ion-title>
+      <img class="logo-header" alt="logo" height="40"   src="../assets/imgs/logo-header.png" > 
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addEvent()" class="add-button">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<div class="BG-image-view">
+	<div *ngFor="let month of monthNames; let i = index; trackBy: customTrackBy" class="BG-image-animation BG-image {{getActive(month)}}" [style.backgroundImage]="background_img[i]" ></div>
+</div>	
+
+<ion-content class="ion-content no-scroll">
+	<div class="month-count">
+		<img [src]="month_count" *ngIf="month_count">
+	</div>	
+	<div class="calendar-view">
+		<img class="air-logo" src="../assets/imgs/air.png">
+		<div class="blur-filter">		
+			<div class="background-filter" [style.backgroundImage]="background_img[currentMonth]" *ngIf="!is_lunaCalendar && loading"></div>
+
+			<div class="background-filter" [style.backgroundImage]="background_img[currentLunaMonth - 1]" *ngIf="is_lunaCalendar && loading"></div>
+
+		  	<div class="background-shadow">
+			  <div class="calendar-header" *ngIf="loading">
+			    <ion-row class="calendar-month">
+			      <ion-col col-2 (click)="goToLastMonth()"><ion-icon name="ios-arrow-back"></ion-icon></ion-col>
+						<ion-col col-8 *ngIf="!is_lunaCalendar">{{currentMonth | translate}} / {{currentYear}}</ion-col>
+						<ion-col col-8 *ngIf="is_lunaCalendar">{{monthLunaNames[currentLunaMonth - 1] | translate}} / {{currentLunaYear}}</ion-col>
+			      <ion-col col-2 (click)="goToNextMonth()"><ion-icon name="ios-arrow-forward"></ion-icon></ion-col>
+			    </ion-row>
+			  </div>
+			  <div class="calendar-body-slide">
+				<ion-slides *ngIf="!is_lunaCalendar" (ionSlideDidChange)="slideChanged()">	
+					<ion-slide>
+						<div class="calendar-body" *ngIf="loading">
+							<ion-grid>
+							  <ion-row class="calendar-weekday">
+							    <ion-col *ngFor="let dayname of dayNames">{{dayname | translate}}</ion-col>
+							  </ion-row>
+							  <ion-row class="calendar-date">
+							    <ion-col col-1 *ngFor="let day of daysInLastWeek" (click)="selectDate(day.day)">
+							      <span class="currentDate t{{day.dayWeek}} event-{{checkEvent(day)}}" *ngIf="currentDate === day.day; else otherDate"><span class="n-day">{{day.day}}</span> <span class="lunar-day">{{day.lunarDay}}</span></span>
+							      <ng-template #otherDate class="otherDate">
+							      	<span class="otherDate t{{day.dayWeek}} event-{{checkEvent(day)}}">
+							        <span class="n-day">{{day.day}}</span> <span class="lunar-day">{{day.lunarDay}}</span></span>
+							      </ng-template>
+							    </ion-col>
+							  </ion-row>
+							</ion-grid>
+						</div>	
+					</ion-slide>						
+					<ion-slide>
+						<div class="calendar-body" *ngIf="loading">
+							<ion-grid>
+							  <ion-row class="calendar-weekday">
+							    <ion-col *ngFor="let dayname of dayNames">{{dayname | translate}}</ion-col>
+							  </ion-row>
+							  <ion-row class="calendar-date">
+							    <ion-col col-1 *ngFor="let day of daysInThisWeek" (click)="selectDate(day.day)">
+							      <span class="currentDate t{{day.dayWeek}} event-{{checkEvent(day)}}" *ngIf="currentDate === day.day; else otherDate"><span class="n-day">{{day.day}}</span> <span class="lunar-day">{{day.lunarDay}}</span></span>
+							      <ng-template #otherDate class="otherDate">
+							      	<span class="otherDate t{{day.dayWeek}} event-{{checkEvent(day)}}">
+							        <span class="n-day">{{day.day}}</span> <span class="lunar-day">{{day.lunarDay}}</span></span>
+							      </ng-template>
+							    </ion-col>
+							  </ion-row>
+							</ion-grid>
+						</div>	
+					</ion-slide>						
+					<ion-slide>
+						<div class="calendar-body" *ngIf="loading">
+							<ion-grid>
+							  <ion-row class="calendar-weekday">
+							    <ion-col *ngFor="let dayname of dayNames">{{dayname | translate}}</ion-col>
+							  </ion-row>
+							  <ion-row class="calendar-date">
+							    <ion-col col-1 *ngFor="let day of daysInNextWeek" (click)="selectDate(day.day)">
+							      <span class="currentDate t{{day.dayWeek}} event-{{checkEvent(day)}}" *ngIf="currentDate === day.day; else otherDate"><span class="n-day">{{day.day}}</span> <span class="lunar-day">{{day.lunarDay}}</span></span>
+							      <ng-template #otherDate class="otherDate">
+							      	<span class="otherDate t{{day.dayWeek}} event-{{checkEvent(day)}}">
+							        <span class="n-day">{{day.day}}</span> <span class="lunar-day">{{day.lunarDay}}</span></span>
+							      </ng-template>
+							    </ion-col>
+							  </ion-row>
+							</ion-grid>
+						</div>	
+					</ion-slide>						
+				</ion-slides>
+				<ion-slides *ngIf="is_lunaCalendar" (ionSlideDidChange)="slideChanged()">	
+					<ion-slide>
+						<div class="calendar-body" *ngIf="loading">
+							<ion-grid>
+							  <ion-row class="calendar-weekday">
+							    <ion-col *ngFor="let dayname of dayNames">{{dayname | translate}}</ion-col>
+							  </ion-row>
+							  <ion-row class="calendar-date">
+							    <ion-col col-1 *ngFor="let day of daysInLastWeek" (click)="selectDate(day.day)">
+							      <span class="currentDate t{{day.dayWeek}} event-{{checkEvent(day)}}" *ngIf="currentDate === day.day; else otherDate"><span class="n-day">{{day.lunarDayDay}}</span> <span class="lunar-day">{{day.day}}</span></span>
+							      <ng-template #otherDate class="otherDate">
+							      	<span class="otherDate t{{day.dayWeek}} event-{{checkEvent(day)}}">
+							        <span class="n-day">{{day.lunarDayDay}}</span> <span class="lunar-day">{{day.day}}</span></span>
+							      </ng-template>
+							    </ion-col>
+							  </ion-row>
+							</ion-grid>
+						</div>	
+					</ion-slide>						
+					<ion-slide>
+						<div class="calendar-body" *ngIf="loading">
+							<ion-grid>
+							  <ion-row class="calendar-weekday">
+							    <ion-col *ngFor="let dayname of dayNames">{{dayname | translate}}</ion-col>
+							  </ion-row>
+							  <ion-row class="calendar-date">
+							    <ion-col col-1 *ngFor="let day of daysInThisWeek" (click)="selectDate(day.day)">
+							      <span class="currentDate t{{day.dayWeek}} event-{{checkEvent(day)}}" *ngIf="currentDate === day.day; else otherDate"><span class="n-day">{{day.lunarDayDay}}</span> <span class="lunar-day">{{day.day}}{{(day.day == 1)?("/"+currentMonthMonth):""}}</span></span>
+							      <ng-template #otherDate class="otherDate">
+							      	<span class="otherDate t{{day.dayWeek}} event-{{checkEvent(day)}}">
+							        <span class="n-day">{{day.lunarDayDay}}</span> <span class="lunar-day">{{day.day}}{{(day.day == 1)?("/"+currentMonthMonth):""}}</span></span>
+							      </ng-template>
+							    </ion-col>
+							  </ion-row>
+							</ion-grid>
+						</div>	
+					</ion-slide>						
+					<ion-slide>
+						<div class="calendar-body" *ngIf="loading">
+							<ion-grid>
+							  <ion-row class="calendar-weekday">
+							    <ion-col *ngFor="let dayname of dayNames">{{dayname | translate}}</ion-col>
+							  </ion-row>
+							  <ion-row class="calendar-date">
+							    <ion-col col-1 *ngFor="let day of daysInNextWeek" (click)="selectDate(day.day)">
+							      <span class="currentDate t{{day.dayWeek}} event-{{checkEvent(day)}}" *ngIf="currentDate === day.day; else otherDate"><span class="n-day">{{day.lunarDayDay}}</span> <span class="lunar-day">{{day.day}}</span></span>
+							      <ng-template #otherDate class="otherDate">
+							      	<span class="otherDate t{{day.dayWeek}} event-{{checkEvent(day)}}">
+							        <span class="n-day">{{day.lunarDayDay}}</span> <span class="lunar-day">{{day.day}}</span></span>
+							      </ng-template>
+							    </ion-col>
+							  </ion-row>
+							</ion-grid>
+						</div>	
+					</ion-slide>						
+				</ion-slides>				
+			  </div>
+		    </div>
+		</div>
+	</div>
+</ion-content>
+<img class="font-bg" src="../assets/imgs/font-bg.png">
+
+<svg class='svgfilter' version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <filter id="svgfilter" class="svgfilter-item">
+    <feGaussianBlur stdDeviation="2" />
+		<!-- comment out feComponentTransfer to remove the darkness -->
+    <feComponentTransfer>
+        <feFuncR type="linear" slope="0.9"/>
+        <feFuncG type="linear" slope="0.9"/>
+        <feFuncB type="linear" slope="0.9"/>
+    </feComponentTransfer>
+  </filter>
+ </svg>
+ <svg class='' height="0" width="0"> 
+  <defs>
+    <clipPath id="myClip" clipPathUnits="objectBoundingBox" transform="scale(0.00135 0.00300)">
+    >
+		<path d="M749.906,139.252V68.65c-13.18-14.72-35.135-22.648-57.432-22.648c-5.672,0-11.268,0.606-16.67,1.757c-15.943-19.634-41.707-31.895-70.102-30.342c-27.441,1.501-51.063,15.568-65.02,35.7c-17.848-19.25-48.047-31.024-81.605-29.189c-26.324,1.439-49.68,10.979-66.076,25.2c-11.238-18.415-31.516-30.709-54.668-30.709c-16.396,0-31.344,6.172-42.668,16.311C270.283,5.472,221.396-8.116,174.645,5.022c-23.131,6.5-42.639,19.042-57.089,34.717c-15.521-10.272-35.768-15.658-57.345-14.478C35.332,26.623,13.9,38.239,0,55.042v88.075v208.426h749.906V139.252z"/>
+    </clipPath>
+  </defs>  
+ 
+</svg>

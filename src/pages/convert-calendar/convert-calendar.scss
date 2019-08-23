@@ -1,0 +1,157 @@
+page-convert-calendar {
+	.item{
+		padding-right: 16px;
+		.item-inner{
+			ion-label{
+				margin: 0;
+			}
+		}
+	}
+	.item-md{
+		padding-right: 16px;
+	}
+	.label-md{
+		margin: 0;
+	}
+	.list-md .item-block .item-inner{
+		border-bottom: none;
+	}
+	.list-ios .item-block .item-inner{
+		border-bottom: none;
+	}
+	.title-page{
+		font-family: 'JambonoVN';
+		font-weight: 900;
+		color: #07ac12;
+	    font-size: 26px;
+	    text-align: center;
+	    margin-top: 25px;
+	    margin-bottom: 15px;	
+	    text-transform: uppercase;	
+	}
+	.date_title{
+	    text-align: center;
+	    font-size: 18px;
+	    font-weight: bold;
+	    text-transform: uppercase;
+	    color: #e71f22;
+		margin-bottom: 5px;	
+		margin-top: 10px;    
+		img{
+			// margin-right: 5px;
+			    max-height: 32px;
+		}
+		span{
+			font-family: 'DaxVN';
+		    position: relative;
+		    top: -10px;
+		}
+
+	}
+	.amlich-title{
+		// margin-top: 25px; 
+	}
+	.check-box{
+		padding-right: 16px;
+	    margin-bottom: -30px;
+	    margin-top: -15px;		
+		.checkbox-icon{
+			background-color: #e71f22;
+		    border-color: #e71f22;
+		}
+		.checkbox-ios-light .checkbox-checked .checkbox-inner{
+			border-color: #ffffff;
+		}
+	}
+	.mbsc-ios .mbsc-sc-whl-gr{
+		padding: 0;
+	}
+	.mbsc-ios .mbsc-sc-whl-l, .mbsc-ios.mbsc-calendar .mbsc-sc-whl-l{
+		background-color: #e51f20;
+	    border-top: 1px solid #e51f20;
+	    border-bottom: 1px solid #e51f20;
+	}
+	.mbsc-ios .mbsc-sc-itm{
+		color: #3f4343 !important;
+		text-align: center !important;
+	}	
+	.mbsc-sc-itm{
+		font-size: 15px;
+	}
+	.mbsc-sc-itm-sel{
+		color: #ffffff !important;
+		font-size: 15px;
+	}
+	.mbsc-ios.mbsc-fr.mbsc-fr-inline .mbsc-sc-whl-o{
+		background: transparent !important;
+	}
+	.mbsc-ios.mbsc-fr.mbsc-fr-inline .mbsc-sc-whl-gr-3d .mbsc-sc-whl-c{
+		background: #e51f20 !important;
+	}
+	.mbsc-ios.mbsc-fr-inline .mbsc-fr-w{
+		border-top: 0 !important;
+	}
+	.mbsc-ios.mbsc-fr-inline .mbsc-fr-c{
+		border-bottom: 0 !important;
+	}
+	// .item-ios.item-block .item-inner{
+	// 	padding-left: 8px !important;
+	// }
+	// .item-md.item-block .item-inner{
+	// 	padding-left: 8px !important;
+	// }	
+	.box{
+	    border: solid 1px #555555;
+	    border-radius: 10px;
+	    overflow: hidden;	
+	    margin-left: 16px;
+	    margin-right: 16px;	
+	    padding-left: 0;
+	    padding-right: 0;	
+	    margin-top: 15px;        
+	    margin-bottom: 15px;        
+	    .item-inner{
+	    	padding-left: 0 !important;
+	    	padding-right: 0 !important;
+	    }	
+	}
+	.box-amlich{
+		margin-top: 30px;
+	}
+	#solarDate,#lunarDate{
+		border-top: solid 1px #555555;
+		// border-radius: 10px;
+		// overflow: hidden;
+		// padding-top: 8px;
+		// padding-bottom: 8px;
+		position: relative;
+	    &:before{
+	    	content:"";
+	    	background-color: #e71f22;
+	    	width: 100%;
+	    	height: 40px;
+	    	bottom:40px;
+	    	left: 0;
+	    	position: absolute;
+	    }		
+	}
+	.font-bg-gallery{
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+		z-index: 10000;
+	}	
+	.btn-view{
+		text-align: center;
+		padding-bottom: 80px;
+	}
+	.show-more{
+	    background-color: #e51f20;
+	    padding: 10px 20px !important;
+	    font-size: 16px !important;
+	    height: auto !important;
+	    border-radius: 20px;
+        margin-top: 10px;
+        text-transform: none;
+	}
+}

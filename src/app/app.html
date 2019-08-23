@@ -1,0 +1,46 @@
+<ion-menu [content]="content">
+  <img class="air-logo {{platform.is('ios')?'ios':'android'}}" src="../assets/imgs/air.png">
+  <ion-header>
+    <ion-toolbar>
+      
+      <ion-title><img class="logo-header" alt="logo" height="40" src="../assets/imgs/logo-header.png" ></ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="goBack()" class="close-button">
+          <ion-icon class="close-btn" name="md-close"></ion-icon>
+        </button>
+      </ion-buttons>      
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="list-menu">
+    <ion-list>
+      <button ion-item *ngFor="let p of pages" tappable (click)="openPage(p)">
+        <img class="icon-item" src="../assets/imgs/{{p.icon}}"> <span>{{ p.title | translate }}</span>
+      </button>
+      <button ion-item (click)="refresh()">
+        <img class="icon-item" src="../assets/imgs/icon/syn-icon.png"> <span>{{ 'sync' | translate }}</span>
+      </button>
+      <button ion-item >
+        <ion-label><img class="icon-item" src="../assets/imgs/icon/lan-icon.png"> <span>{{ 'SELECT_LANGUAGE' | translate }}</span></ion-label>
+        <ion-select [(ngModel)]="languageSelected" (ionChange)='setLanguage()' [cancelText]="'CANCEL' | translate">
+          <ion-option *ngFor="let item of languages" [value]="item.code">{{item.name}}</ion-option>
+        </ion-select>
+      </button>
+      <button ion-item style="display: none" >
+        <ion-label><img class="icon-item" src="../assets/imgs/icon/date-icon.png"> <span>{{ 'SELECT_CALENDAR_TYLE' | translate }}</span></ion-label>
+        <ion-select *ngIf="calendartypeSelected" 
+        [(ngModel)]="calendartypeSelected" 
+        name="calendartypeSelected"
+        (ionChange)='setCalendartype()' 
+        [cancelText]="'CANCEL' | translate"
+            [selectedText]="(calendartypeSelected == '') ?
+            ('duonglich' | translate) : (calendartypeSelected | translate)"     
+        >
+          <ion-option value="amlich">{{'amlich'|translate}}</ion-option>
+          <ion-option value="duonglich">{{'duonglich'|translate}}</ion-option>
+        </ion-select>
+      </button>      
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<!-- <ion-nav [root]="rootPage"></ion-nav> -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false" ></ion-nav>

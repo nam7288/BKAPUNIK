@@ -1,0 +1,37 @@
+page-update-resource {
+    display: none;
+    .background-filter{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        z-index: 0;  
+        background-size: cover;
+        background-position: center;        
+    }
+    .progress-outer {
+        width: 96%;
+        margin: 10px 2%;
+        padding: 1px;
+        text-align: center;
+        background-color: #f4f4f4;
+        border: 1px solid #dcdcdc;
+        color: #fff;
+        border-radius: 20px;
+        position: relative;
+        top: 50%;
+    }
+ 
+    .progress-inner {
+        min-width: 15%;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0px;
+        border-radius: 20px;
+        background-color: #16A1A4;
+        color: #16A1A4;
+        font-size: 10px;
+        min-height: 5px;        
+    }
+}

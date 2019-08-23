@@ -1,0 +1,57 @@
+page-week-view {
+	.calendar-view{
+	    left: 0;
+	    border-radius: 0;
+	    bottom: 0;
+	    width: 100%;
+	    .air-logo{
+		    position: absolute;
+		    top: -20px;
+		    width: 130px;
+		    z-index: 10;
+		    right: 10%;
+	    }
+	    .blur-filter{
+	    	border-radius: 0;
+	    }
+	    .background-shadow{
+		    padding-bottom: 20px;
+		    padding-top: 40px;
+	    }
+	    .calendar-date{
+	    	min-height: auto;
+	    	.col{
+	    		border-right: solid 1px #ffffff;
+	    	}
+	    	&:last-child{
+	    		border-right: solid 1px transparent;
+	    	}
+	    }
+	    .blur-filter{
+	    	-webkit-clip-path: url(#myClip);
+	    	clip-path: url(#myClip);
+			width: 100%;
+			// height: 40vh;	
+			display: block;    
+			.background-filter{
+				left: 0px;
+				bottom: 0px;
+			}	
+	    }
+	}
+	.calendar-body{
+		.calendar-weekday{
+		    border-bottom: 0;
+	    	.col{
+	    		border-right: solid 1px transparent;
+	    	}
+	    	&:last-child{
+	    		border-right: 0;
+	    	}		    
+		}
+	}
+	.svgfilter{
+	  width: 100%;
+	  height: 400px;
+	}
+}

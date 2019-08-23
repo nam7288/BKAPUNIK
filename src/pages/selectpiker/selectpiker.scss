@@ -1,0 +1,369 @@
+page-selectpiker{
+  font-family: 'DaxVN';
+  .back-btn{
+    button{
+      color: #ffffff;
+    }
+    
+  }
+    .save_button{
+      // width: 23vw;
+      //   display: inline;
+      //   background-color: rgb(229,31,32);
+      //   position: absolute;
+      //   right: -8vw;
+      //   top: 0;
+      //   padding-top: 0.6vw;
+      //   color: white;
+        img{
+          height: 25px;
+        }
+        .item-inner{
+          background-image: none !important;
+          border-bottom: 0 !important;
+        }
+    }
+    .calendar-time{
+      position: absolute;
+      width: calc(100% - 30px);
+      bottom: 320px;
+      left: 15px;
+      .item{
+        // background-color: rgba(0, 0, 0, 0.8);
+        // color: #ffffff;
+        background-color: #ffffff;
+        color: #000000;        
+        font-size: 20px;  
+        border-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0; 
+        padding-top: 5px;
+        padding-bottom: 5px;               
+        .item-inner{
+          padding-left: 8px;
+          border-bottom: 0;
+        }     
+      }
+      ion-datetime{
+        border: solid 1px;
+        border-radius: 10px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+      }
+      #time-hms{
+        border: solid 1px;
+        border-radius: 10px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        width: 70px;
+        text-align: center;
+        float: right;        
+      }
+      .label{
+        color: #000000;
+      }       
+    }
+    .month-count{
+      position: absolute;
+      top: 5%;
+      right: 0px;
+      img{
+        height: 120px;
+      }
+    }
+    .ion-content{
+    	background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;      
+      z-index: 1;
+    }
+
+    .BG-image-view{
+      background-color: #ffffff; 
+      position: absolute;
+
+      top: 54px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 54px);
+      // background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;      
+    }
+    .ios.BG-image-view{
+      background-color: rgba(0,0,0,0.3); 
+      position: absolute;
+
+      top: 64px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 64px);
+      // background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;      
+    }    
+    .BG-image{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+       
+    }
+    .BG-image-animation{
+      background-color: transparent;  
+       opacity: 0;    
+        -webkit-transition: opacity 0.3s ease-in-out;
+        -moz-transition: opacity 0.3s ease-in-out;
+        -ms-transition: opacity 0.3s ease-in-out;
+        -o-transition: opacity 0.3s ease-in-out;         
+      &.animation{
+        z-index: 1;     
+        opacity: 1;
+      }
+    }
+    .calendar-view{
+    	position: fixed;
+    	width: 	calc(100% - 30px);
+    	bottom: 15px;
+    	left: 15px;
+    	border-radius: 10px;
+    	.background-shadow{
+        // background-color: rgba(0, 0, 0, 0.8);
+    		background-color: #ffffff;
+    	}
+      .blur-filter{
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;         
+        position: relative;
+        .background-filter{
+          width: 100vw;
+          // height: 100vh;
+          height: calc(100vh - 54px);
+          bottom: -15px;
+          left: -15px;
+        }
+      }
+    }
+  [col-1] {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 8.33333%;
+    -ms-flex: 0 0 8.33333%;
+    flex: 0 0 14.285714285714286%;
+    width: 14.285714285714286%;
+    max-width: 14.285714285714286%;
+    min-height: 36px;
+  }
+  .col {
+    text-align: center;
+    padding: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 16px;
+  }
+  .last-month, .next-month {
+    color: #999999;
+    font-size: 90%;
+  }
+  .currentDate, .otherDate {
+    padding: 5px; 
+    .n-day,.lunar-day{
+      position: relative;
+      z-index: 10;
+    } 
+  }
+  .currentDate {
+    /*font-weight: bold;*/
+    // background-color: red;
+    /*color: white;*/
+    border-radius: 30px;
+    // background-image: url('../assets/imgs/cloud.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;  
+    &:before{
+      content:"";
+      // background-image: url('../assets/imgs/cloud.png');
+      background-image: none;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat; 
+      position: absolute;
+      width: 90%;
+      height: 70%;
+      left: 5%;
+      top: -5%;
+    }  
+  }
+  .event-true {
+    font-weight: bold;
+    // background-color: red;
+    color: white;
+    border-radius: 30px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;   
+    &:before{
+      content:"";
+      background-image: url('../assets/imgs/cloud-event.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat; 
+      position: absolute;
+      width: 90%;
+      height: 70%;
+      left: 5%;
+      top: -5%;
+    }      
+  }  
+  .calendar-header {
+    color: #FFFFFF;
+  }
+  .calendar-month{
+	font-size: 20px;
+	padding-top: 10px;
+  font-family: 'DaxVN';
+  }
+  .event-bullet {
+    margin: 2px auto;
+    height: 5px;
+    width: 5px;
+    background-color: green;
+    border-radius: 30px;
+  }
+  .selected-date {
+    width: 20px;
+    height: 2px;
+    background-color: blue;
+  }
+  .unselected-date {
+    border: none;
+  }
+  .calendar-body {
+    .grid {
+      padding: 0;
+    }
+    .col:last-child {
+      border-right: none;
+    }
+    .calendar-weekday, .calendar-date {
+      text-align: center;
+      margin: 0;
+      color: #ffffff;
+    }
+    .calendar-weekday {
+      font-weight: bold;
+      border-bottom: solid 1px #ffffff;
+      color: #ffffff;
+      font-family: 'DaxVN';
+  		text-transform: uppercase;
+  		font-size: 16px;
+      .col:first-child {
+            color: #e51f20;
+      }      
+    }
+    .calendar-date {
+      // border-top: solid 1px #1a732d;
+      // border-bottom: solid 1px #1a732d;
+      font-family: 'DaxVN';
+      padding-top: 10px;
+      min-height: 225px;
+      .t0{
+        .n-day{
+          color: #e51f20;
+        }
+      }
+    }
+    .lunar-day{
+      font-size: 7px;
+    }
+  }
+  .font-bg{
+    position: fixed;
+    width: 70px;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+  }
+}
+
+//popup
+page-selectpiker .BG-image-view{
+  background-color: rgba(0, 0, 0, 0.3);  
+  // background-color: transparent;
+}
+page-selectpiker .BG-image-animation{
+  display: none;
+}
+page-selectpiker .month-count{
+  display: none;;
+}
+page-selectpiker .calendar-view .blur-filter .background-filter{
+  display: none;
+}
+page-selectpiker .calendar-view{
+  top: calc(50vh - 100px);
+  bottom: auto;
+}
+page-selectpiker .calendar-time{
+  top: calc(50vh - 155px);
+  bottom: auto;
+}
+page-selectpiker .calendar-submit{
+    position: absolute;
+    top: calc(50vh + 190px);
+    bottom: auto;
+    width: 100%;
+    text-align: center;
+    background-color: #ffffff;
+    width: calc(100% - 30px);
+    left: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;    
+    button{
+      padding: 8px 15px;
+      font-size: 16px;
+      // background-color: rgba(0, 0, 0, 0.8);
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 10px;
+      border: solid 1px;
+      margin-bottom: 10px;      
+    }
+}
+
+page-selectpiker .col{
+  color: #000000;
+}
+
+.mbsc-fr{
+  &.disabled{
+    .mbsc-sc-itm{
+      color: #585858 !important;
+    }
+    .mbsc-fr-btn0{
+      display: none;
+    }
+  }
+}
+.calendar-btn{
+  padding: 8px 15px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  border: solid 1px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;  
+}

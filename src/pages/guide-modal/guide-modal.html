@@ -1,0 +1,11 @@
+<ion-content  class='content no-scroll' (click)=close()>	
+	<div class="content-view" (click)=contentClick()  (swipe)="swipe($event)">
+	<ion-icon class='left-arrow' name="arrow-back"></ion-icon>
+	<div class="title">Hướng dẫn cài đặt hình nền cho IOS</div>
+	<div class="guide-content">
+		<img id="guide-img" class="guide-img" src={{guideImage}}>
+	</div>
+	<div id="text-content" class="text-content"><u>Bước 1</u> : Vào phần <b>Photos</b></div>
+	</div>
+	<ion-icon class='right-arrow' name="arrow-forward"></ion-icon>
+</ion-content>

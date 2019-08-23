@@ -1,0 +1,299 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+body{
+  font-family: 'DaxVN';
+}
+@font-face {
+    font-family: 'JambonoVN';
+    src: url('../assets/fonts/JambonoVNMedium.eot');
+    src: url('../assets/fonts/JambonoVNMedium.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/JambonoVNMedium.woff2') format('woff2'),
+        url('../assets/fonts/JambonoVNMedium.woff') format('woff'),
+        url('../assets/fonts/JambonoVNMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DaxVN';
+    src: url('../assets/fonts/DaxVN-Bold.eot');
+    src: url('../assets/fonts/DaxVN-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/DaxVN-Bold.woff2') format('woff2'),
+        url('../assets/fonts/DaxVN-Bold.woff') format('woff'),
+        url('../assets/fonts/DaxVN-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DaxVN';
+    src: url('../assets/fonts/DaxVN-Italic.eot');
+    src: url('../assets/fonts/DaxVN-Italic.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/DaxVN-Italic.woff2') format('woff2'),
+        url('../assets/fonts/DaxVN-Italic.woff') format('woff'),
+        url('../assets/fonts/DaxVN-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'JambonoVN';
+    src: url('../assets/fonts/JambonoVNBlack.eot');
+    src: url('../assets/fonts/JambonoVNBlack.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/JambonoVNBlack.woff2') format('woff2'),
+        url('../assets/fonts/JambonoVNBlack.woff') format('woff'),
+        url('../assets/fonts/JambonoVNBlack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JambonoVN';
+    src: url('../assets/fonts/JambonoVNLight.eot');
+    src: url('../assets/fonts/JambonoVNLight.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/JambonoVNLight.woff2') format('woff2'),
+        url('../assets/fonts/JambonoVNLight.woff') format('woff'),
+        url('../assets/fonts/JambonoVNLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DaxVN';
+    src: url('../assets/fonts/DaxVN.eot');
+    src: url('../assets/fonts/DaxVN.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/DaxVN.woff2') format('woff2'),
+        url('../assets/fonts/DaxVN.woff') format('woff'),
+        url('../assets/fonts/DaxVN.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DaxVN';
+    src: url('../assets/fonts/DaxVN-BoldItalic.eot');
+    src: url('../assets/fonts/DaxVN-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/DaxVN-BoldItalic.woff2') format('woff2'),
+        url('../assets/fonts/DaxVN-BoldItalic.woff') format('woff'),
+        url('../assets/fonts/DaxVN-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'UTM Bebas';
+    src: url('../assets/fonts/UTMBebas.eot');
+    src: url('../assets/fonts/UTMBebas.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/UTMBebas.woff2') format('woff2'),
+        url('../assets/fonts/UTMBebas.woff') format('woff'),
+        url('../assets/fonts/UTMBebas.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+ion-alert{
+  font-family: 'DaxVN';
+}
+ion-header{
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);  
+	.logo-header{
+		height: 25px;
+		margin-top: 10px;
+	}
+	.toolbar{
+	    min-height: 54px;
+
+	}	
+  ion-title{
+    text-align: center;
+  }   
+  .toolbar-background{
+    background-color: #e51f20;
+  }  
+	.menu-button{
+		ion-icon{
+			color: #ffffff;
+			font-size: 35px;
+		}
+	}
+	.add-button{
+		ion-icon{
+			color: #ffffff;
+			font-size: 35px;
+		}
+	}
+  .back-button{
+    color: #ffffff;
+    font-size: 35px;
+    .back-button-text{
+      display: none;
+    }
+  }
+	.bar-button-ios[icon-only] ion-icon{
+		font-size: 35px;
+	}	
+  .close-btn{
+    color: #ffffff;
+  }
+}
+.menu-inner{
+  width: 100%;
+  .air-logo{
+    position: absolute;
+    top: 10px;
+    z-index: 100;
+    width: 95px;
+  } 
+  .air-logo{
+    position: absolute;
+    top: 0px;
+    z-index: 100;
+    width: 95px;
+  } 
+  .ios.air-logo{
+    position: absolute;
+    top: 16px;
+    z-index: 100;
+    width: 85px;
+  } 
+  .content{
+    background-color: #e51f20;
+    background-image: url('../assets/imgs/footer-menu-bg.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  } 
+  .list{
+    padding-top: 30px;
+    .item{
+      border:0;
+      padding-right: 16px;
+      background-color: transparent;
+      color: #ffffff;     
+      .item-inner{
+        border-bottom: 1px solid #f28f90;
+        background-image: none;
+        font-family: 'DaxVN';
+        .icon-item{
+          height: 31px;
+          margin-right: 15px;
+        }
+        span{
+          position: relative;
+          top: -8px;          
+        }
+      } 
+    }
+  }
+}
+ion-menu {
+    max-width: 100%!important;
+    ion-title{
+      text-align: center;
+      padding-left: 75px; 
+    }  
+    .list-menu{
+      .scroll-content{
+        max-height: calc(100% - 70vw);
+      }  
+    }
+  .button-inner{
+    color: #ffffff;
+  }
+  .list{
+    .item{
+      .input-wrapper{
+        ion-label{
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+}
+
+.no-scroll .scroll-content{
+          overflow: hidden;
+}
+
+.svgfilter {
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+$svgfilter: url("#svgfilter");
+.blur-filter{
+	border-radius: 10px;
+	overflow: hidden;
+  .background-filter{
+    background-position: center;
+    background-size: cover;
+
+    display: block;
+    z-index: -1;
+    -webkit-filter: $svgfilter;
+    -moz-filter: $svgfilter;
+    -o-filter: $svgfilter;
+    -ms-filter: $svgfilter;
+    filter: $svgfilter;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    @-moz-document url-prefix() {
+
+      width: 100vw;
+      height: 100vh;
+      bottom: -15px;
+      left: -15px;
+      // margin: 0;
+
+      // padding: 0;
+
+      // top: 0;
+
+      // left: 0; 
+    }
+   
+      
+  }
+}
+// .blur-filter::before {
+//   // background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/106891/san-francisco-street.JPG) no-repeat #000;
+//   background: url('../assets/imgs/background/bg.jpg');
+//   background-position: center;
+//   background-size: cover;
+//   background-attachment: fixed;
+// }
+// .blur-filter::before {
+//   content: "";
+// 	display: block;
+//   z-index: -1;
+//   -webkit-filter: $svgfilter;
+//   -moz-filter: $svgfilter;
+//   -o-filter: $svgfilter;
+//   -ms-filter: $svgfilter;
+//   filter: $svgfilter;
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   margin: 0;
+//   padding: 0;
+// }

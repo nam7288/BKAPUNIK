@@ -1,0 +1,110 @@
+<!-- <ion-header>
+  <ion-navbar>
+      <ion-buttons left class="back-btn">
+       <button ion-button navPop icon-only>
+        <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+      </button>
+      </ion-buttons> 	
+    <ion-title>
+      <img class="logo-header" alt="logo" height="40" src="../assets/imgs/logo-header.png" > 
+    </ion-title>
+	    <ion-buttons end>
+	      <button ion-button icon-only (click)="saveEvent()" class="add-button">
+	        <img height="25" src="../assets/imgs/icon/save_icon.png">
+	      </button>    
+	    </ion-buttons>	  
+  </ion-navbar>
+</ion-header> -->
+
+<!-- <div class="BG-image-view">
+	<div *ngFor="let month of monthNames" class="BG-image-animation BG-image {{getActive(month)}}" [style.background-image]="getBg(month)"></div>
+</div>	 -->
+
+<ion-content class="ion-content no-scroll">	
+	<div class="BG-image-view {{plt.is('ios')?'ios':'android'}}" (click)="saveEvent()">
+	</div>	
+	<div class="month-count">
+		<img src="../assets/imgs/month/{{currentMonth?currentMonth:bgApril}}.png" *ngIf="!is_lunaCalendar">
+		<img src="../assets/imgs/month/{{calendarPerv_Next?monthNames[calendarPerv_Next[1].lunarMonth - 1]:monthNames[0]}}.png" *ngIf="is_lunaCalendar">
+	</div>
+	<div class="calendar-time" *ngIf="!allDay">
+		<ion-item>
+		  <ion-label>{{'Time' | translate}}:</ion-label>
+		  <ion-label >		    	
+		  	<input id="time-hms" [(ngModel)]="myTime" (change)="myTimeChange($event.target.value)">
+		  </ion-label>	
+		</ion-item>	
+
+<!-- 		<ion-item>
+		  <ion-label>{{'Time' | translate}}:</ion-label>
+		  <ion-datetime displayFormat="hh:mm A" [(ngModel)]="myTime" (ionChange)="myTimeChange()"></ion-datetime>
+		</ion-item>	 -->	
+			
+	</div>
+	<div class="calendar-view">
+		<div class="blur-filter">
+			<div class="background-filter" [style.background-image]="getBg(currentMonth)" *ngIf="!is_lunaCalendar"></div>
+			<div class="background-filter" [style.background-image]="getBg(calendarPerv_Next?monthNames[calendarPerv_Next[1].lunarMonth - 1]:monthNames[0])" *ngIf="is_lunaCalendar"></div>
+		  	<div class="background-shadow">
+			  <div class="calendar-header">
+			    <ion-row class="calendar-month">
+			      <ion-col col-2 (click)="goToLastMonth()"><ion-icon name="ios-arrow-back"></ion-icon></ion-col>
+						<ion-col col-8 *ngIf="!is_lunaCalendar">{{currentMonth | translate}} / {{currentYear}}</ion-col>
+						<ion-col col-8 *ngIf="is_lunaCalendar">{{monthLunaNames[calendarPerv_Next[1].lunarMonth - 1] | translate}} / {{calendarPerv_Next[1].lunarYear}}</ion-col>
+			      <ion-col col-2 (click)="goToNextMonth()"><ion-icon name="ios-arrow-forward"></ion-icon></ion-col>
+			    </ion-row>
+			  </div>
+			  <div class="calendar-body-slide">
+				<ion-slides (ionSlideDidChange)="slideChanged()">
+					<ion-slide *ngFor="let calendar_item of calendarPerv_Next">
+						<div class="calendar-body">
+							<ion-grid>
+								<ion-row class="calendar-weekday">
+									<ion-col *ngFor="let dayname of dayNames">{{dayname | translate}}</ion-col>
+								</ion-row>
+								<ion-row class="calendar-date">
+									<ion-col col-1 *ngFor="let lastDay of calendar_item.daysInLastMonth" class="last-month" (click)="goToLastMonth()"></ion-col>
+									<ion-col col-1 *ngFor="let day of calendar_item.daysInThisMonth ; let i = index; trackBy: customTrackBy" (click)="selectDate(day,calendar_item)">
+										<span class="currentDate t{{calendar_item.daysLunarInThisMonth[i][1]}} event-{{checkEvent(day,calendar_item)}}" 
+											*ngIf="(
+													(is_lunaCalendar && day == calendar_item.lunarDate && LunaMonth == calendar_item.lunarMonth && LunaYear == calendar_item.lunarYear) || 
+													(!is_lunaCalendar && dayday === day && month === calendar_item.currentMonth && year === calendar_item.currentYear)
+												); 
+												else otherDate
+											">
+											<span class="n-day">{{day}}</span> 
+											<span class="lunar-day">{{calendar_item.daysLunarInThisMonth[i][0]}}</span>
+										</span>										
+										<ng-template #otherDate class="otherDate">
+											<span class="otherDate t{{calendar_item.daysLunarInThisMonth[i][1]}} event-{{checkEvent(day,calendar_item)}}">
+											<span class="n-day">{{day}}</span> <span class="lunar-day">{{calendar_item.daysLunarInThisMonth[i][0]}}</span></span>
+											<!-- <br><div class="event-bullet" *ngIf="checkEvent(day)"></div> -->
+										</ng-template>
+									</ion-col>
+									<ion-col col-1 *ngFor="let nextDay of calendar_item.daysInNextMonth" class="next-month" (click)="goToNextMonth()"></ion-col>
+								</ion-row>
+							</ion-grid>
+						</div>
+					</ion-slide>								
+				</ion-slides>
+			  </div>
+		    </div>
+		</div>
+	</div>
+	<div class="calendar-submit">
+		<button (click)="saveEvent()">{{'xac_nhan' | translate}}</button>
+	</div>
+	
+</ion-content>
+<img class="font-bg" src="../assets/imgs/font-bg.png">
+<svg class='svgfilter' version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <filter id="svgfilter" class="svgfilter-item">
+    <feGaussianBlur stdDeviation="2" />
+		<!-- comment out feComponentTransfer to remove the darkness -->
+    <feComponentTransfer>
+        <feFuncR type="linear" slope="0.9"/>
+        <feFuncG type="linear" slope="0.9"/>
+        <feFuncB type="linear" slope="0.9"/>
+    </feComponentTransfer>
+  </filter>
+</svg>

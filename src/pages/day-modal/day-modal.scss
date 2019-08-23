@@ -1,0 +1,292 @@
+page-day-modal {
+	.content{
+	 // background-image: url('../assets/imgs/daybackground/bg1.jpg');
+   	 background-size: cover;
+     background-position: top;
+   	 background-repeat: no-repeat; 
+	 overflow: hidden !important;
+   	 height: 100%;
+   	 margin: 0;
+	}
+    .scroll-content{
+        background-color: #e51f20;
+    }
+    .bg-image{
+        position: absolute;
+        top: -13vw;
+        width: 100%;
+        background-color: #ffffff;
+        height: 135vw;
+        img{
+            width: 100%;
+            position: absolute;
+            top: 0; 
+            -webkit-transition: opacity 0.3s ease-in-out;
+            -moz-transition: opacity 0.3s ease-in-out;
+            -ms-transition: opacity 0.3s ease-in-out;
+            -o-transition: opacity 0.3s ease-in-out;
+            opacity: 0;  
+              &.animation{   
+                opacity: 1;
+              }                                   
+        }
+    }
+	.img{
+	 margin-top:-20px;
+	}
+    .BG-image-animation{
+      background-color: transparent;  
+       opacity: 1;      
+      &.animation{
+        -webkit-transition: opacity 0.3s ease-in-out;
+        -moz-transition: opacity 0.3s ease-in-out;
+        -ms-transition: opacity 0.3s ease-in-out;
+        -o-transition: opacity 0.3s ease-in-out;        
+        opacity: 0;
+      }
+    }
+    .dayImage{
+        position: relative;
+        height: 20vw;
+    }
+    .flowerImage{
+    	position: absolute;
+    	bottom: 50%;
+    	left: 35%;
+    	height: 16vw;
+    }
+    .yellowLine
+    {
+        position: relative;
+    	height: 2px;
+    	width: 90%;
+    	left: 5%;
+    	bottom: 17px;
+    	background-image: linear-gradient(rgb(221,171,98), rgb(158,90,53));
+    }
+    .dayOfWeek{
+    	font-family: 'DaxVN';
+    	
+    	background: -webkit-linear-gradient(#ddab62, rgb(158,90,53));
+  		-webkit-background-clip: text;
+  		-webkit-text-fill-color: transparent;
+        font-size: 8vw;
+    	top: -35px;
+		position: relative;
+		text-transform: uppercase;
+		font-family: 'UTM Bebas';
+
+        &.en{
+            font-size: 6vw;
+        }
+    }
+    .left-arrow{
+        position: absolute;
+	    font-size: 7.5vw;
+	    color: rgb(197,197,197);
+	    top: 94vw;
+	    left: 3px;
+    }
+    .right-arrow{
+        position: absolute;
+	    font-size: 7.5vw;
+	    color: rgb(197,197,197);
+	    top: 94vw;
+	    right: 3px;
+    }
+    .list-ios > .item-block:first-child {
+        border-top: 0;
+    }
+    .day{
+    	text-align: center;
+    	position: absolute;
+   		margin-top: 78%;
+    	margin-left: 5%;
+    }
+    .currentDate{
+        position: absolute;
+	    top: 77vw;
+	    font-family: 'UTM Bebas';
+	    font-size: 8vw;
+	    left: 30%;
+	    color: #07ac12;
+    }
+    .date{
+        position: absolute;
+        width: 70%;
+        top: 89vw;
+        left: 27%;
+    }
+    .column1{
+	    position: absolute;
+	    background-color: #aeaeae;
+	    height: 60px;
+	    left: 20%;
+	    width: 1px;
+	    top: 3%;
+	}
+	.column2{
+		position: absolute;
+	    background-color: #aeaeae;
+	    height: 60px;
+	    width: 1px;
+	    top: 3%;
+	    left: 44.5%;
+	}
+    .hour{
+        color: #07ac12;
+        font-size: 4vw;
+        font-family: 'DaxVN';
+        line-height: 1.3;
+        display: inline-block;
+        /* margin-right: 3%; */
+        text-align: center;
+        min-width: 32%;
+    }
+
+    .lunarDay{	    color: #07ac12;
+        color: #07ac12;
+        font-size: 4vw;
+        font-family: 'DaxVN';
+        line-height: 1.3;
+        display: inline-block;
+        border-right: 1px solid #aeaeae;
+        border-left: 1px solid #aeaeae;
+        /* padding-left: 3%; */
+        /* padding-right: 3%; */
+        text-align: center;
+        min-width: 32%;
+    }
+    .month{
+        color: #07ac12;
+        font-size: 4vw;
+        font-family: 'DaxVN';
+        line-height: 1.3;
+        display: inline-block;
+        margin-left: 0%;
+        text-align: center;
+        min-width: 32%;
+    }
+    .timeNumber{
+        font-weight: bold;
+        font-size: 5vw;
+    }
+    .time-title{
+        font-size: 5.2vw;
+        margin-bottom: 1vw;
+        display: inline-block;
+
+    }
+	.eventbackground{ 
+        position: absolute;
+        top: 108vw;
+        width: 100%;
+	}
+	.event{
+        background-color: #e51f20;
+		color: white;
+		font-style:  'DaxVN';
+        position: absolute;
+        font-size: 4vw;
+        top: 133vw;
+        width: 100%;
+		min-height: 31vw;
+	}
+	.event-tittle{
+	    font-size: 3vw;
+	    padding-left: 5%;
+	    display: inline-block;
+	    padding-right: 5%;
+        padding-bottom: 5%;
+        font-family: 'DaxVN';
+
+	}
+    .event-content{
+        background-color: #e51f20;
+    }
+	.event-time{
+		color: white;
+		font-size: 3vw;
+		display: inline-block;
+        width: 12vw;
+        font-family: 'DaxVN';
+	}
+	.event-text{
+        left: 0%;
+        position: relative;
+        padding-left: 16px;
+        display: inline-block;
+        color: white;
+        font-size: 3vw;
+        /* width: calc(100% - 45px); */
+        display: block;
+        word-break: break-all; 
+        font-family: 'DaxVN';       
+	}
+	.event-modul{
+		background-color: #e51f20;
+		position: relative;
+        padding-left: 0;
+        min-height: 10vw;
+        ion-label{
+            display: grid;
+            grid-template-columns: 50px 1fr;
+        }
+	}
+    .event-sub{
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-top: 10px;
+        margin-bottom: 10px; 
+        font-size: 3vw; 
+        font-family: 'DaxVN';      
+    }
+	.event-list{
+		// overflow: auto;
+		// height: 100px;
+        margin: 0;
+        padding-bottom: 15px; 
+        padding-left: 5%;
+        padding-right: 5%;                
+	}
+
+	// @media only screen and (max-width: 320px) {
+	// 	.dayImage{
+	// 		max-height: 50px;
+	// 	}
+	// 	.hour{
+	// 		margin-top: 75%;
+	// 		margin-left: 30%;
+	// 	}
+	// 	.lunarDay{
+	// 		margin-top: 75%;
+	// 		margin-left: 52.5%;
+	// 	}
+	// 	.month{
+	// 		margin-top: 75%;
+	// 		margin-left: 73%;
+	// 	}
+	// 	.time-title{
+ //    	}
+ //    	.event{
+ //    		top: 69%;
+ //    	}
+ //    	.dayOfWeek{
+ //    		font-size: 8vw;
+ //    		left: 10%;
+ //    	}
+ //    	.flowerImage{
+ //    	    position: absolute;
+	// 	    bottom: 56%;
+	// 	    left: 40%;
+	// 	    height: 40px;
+ //    	}
+	// }
+
+	// @media only screen and (max-width: 375px) and (min-height: 812px) {
+	// 	.event{
+	// 		top:75%;
+	// 	}
+	// }
+
+}

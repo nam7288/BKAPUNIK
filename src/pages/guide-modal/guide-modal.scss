@@ -1,0 +1,63 @@
+
+.GuideModal {
+    background:  rgba(0, 0, 0, 0.5);
+    .content{
+        background-color: transparent;
+    }
+    .content-view{
+        height: 70%;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 35%;
+        border-radius: 7px;
+        overflow: hidden;
+        background-color: white; 
+        z-index: 1;
+    }
+    .modal-wrapper {
+/*        height: 70%;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 35%;
+        border-radius: 7px;
+        overflow: hidden;*/
+
+    }
+    .left-arrow{
+        position: absolute;
+        font-size: 8vw;
+        color: rgb(135,135,135);
+        top: 94vw;
+        left: 8%;
+    }
+    .right-arrow{
+        position: absolute;
+        font-size: 8vw;
+        color: rgb(135,135,135);
+        top: 94vw;
+        right: 8%;
+    }
+    .title{
+        text-align: center;
+        font-size: 6vw;
+        margin: 5% 5%;
+        color: rgb(5,173,18);
+        font-family: JambonoVNMedium ;
+        font-style: italic;
+        font-weight: bold;
+    }
+    .guide-content{
+        text-align: center;
+    }
+    .guide-img{
+        max-width: 50%;
+    }
+    .text-content{
+        text-align: center;
+        margin-top: 6%;
+        font-family: DaxVN Bold;
+        font-size: 4vw;
+    }
+}

@@ -1,0 +1,71 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com-badrit-base64": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-plugin-calendar": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-plugin-photo-library": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-plugin-save-image": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-plugin-wallpaper": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-wheel-selector-plugin": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.vietjetair.ecalendar"
+    }
+  }
+}
